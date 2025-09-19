@@ -1,0 +1,15 @@
+# Docker
+mysql_data/
+.dockerignore
+
+# MODX
+www/core/cache/
+www/assets/cache/
+www/core/export/
+www/core/packages/
+
+# System
+.DS_Store
+Thumbs.db
+*.log
+EOF
