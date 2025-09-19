@@ -37,6 +37,7 @@ services:
     volumes:
       - mysql_data:/var/lib/mysql
       - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql/backup:/docker-entrypoint-initdb.d/backup
     ports:
       - "3306:3306"
     networks:
@@ -46,11 +47,11 @@ services:
     image: alpine
     restart: unless-stopped
     volumes:
-      - ./migrations:/migrations
-      - ./docker-compose.yml:/docker-compose.yml
+      - ./mysql/scripts:/scripts  # Монтируем скрипты
+      - ./mysql/backup:/backup    # Монтируем папку для бэкапов
     command: >
       sh -c "apk add --no-cache mysql-client bash &&
-             cd /migrations &&
+             cd /scripts &&
              ./watch-db-changes.sh"
     depends_on:
       - mysql
