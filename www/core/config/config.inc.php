@@ -15,12 +15,12 @@ $config_options = array (
 $driver_options = array (
 );
 
-$lastInstallTime = 1758219747;
+$lastInstallTime = 1758277648;
 
-$site_id = 'modx68cc4de360a663.19121876';
-$site_sessionname = 'SN68cc4cf9e5030';
+$site_id = 'modx68cd301004bda1.31505194';
+$site_sessionname = 'SN68cd2e8d395ad';
 $https_port = '443';
-$uuid = '91d31226-2d7d-4247-a0be-3fe748671b20';
+$uuid = 'bc9e12b1-fe5d-4f1c-b62f-1e9a5eb3dbb7';
 
 if (!defined('MODX_CORE_PATH')) {
     $modx_core_path= '/var/www/html/core/';

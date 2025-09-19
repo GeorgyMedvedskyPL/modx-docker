@@ -13,4 +13,16 @@ RUN apk add --no-cache shadow && \
     usermod -u 1000 www-data && \
     groupmod -g 1000 www-data
 
+RUN mkdir -p /var/www/html/core/cache \
+    /var/www/html/assets/cache \
+    /var/www/html/core/export \
+    /var/www/html/core/packages \
+    /var/www/html/core/config
+
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 755 /var/www/html && \
+    chmod -R 777 /var/www/html/core/cache \
+    /var/www/html/assets/cache \
+    /var/www/html/core/config
+
 WORKDIR /var/www/html
